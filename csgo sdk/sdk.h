@@ -1,0 +1,15 @@
+#pragma once
+
+#include "cclientclass.h"
+#include "ccolor.h"
+#include "cmatrix.h"
+#include "cusercmd.h"
+#include "crecvtable.h"
+#include "cvector.h"
+#include "ibaseclientdll.h"
+#include "iclientmodeshared.h"
+#include "iglobalvars.h"
+#include "ivpanel.h"
+#include "isurface.h"
+#include "ivengineclient.h"
+#include "entity.h"
