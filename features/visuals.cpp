@@ -111,7 +111,7 @@ void visuals::Menu()
 		auto menuWidth = ImGui::GetWindowWidth();
 		auto menuHeight = ImGui::GetWindowHeight();
 
-		ImGui::BeginChild("###tabs", ImVec2(menuWidth - 7, 35), true);
+		ImGui::BeginChild("###tabs", ImVec2(770, 35), true);
 		{
 			ImGui::PushStyleColor(ImGuiCol_Button, {0, 0, 0, 0});
 			ImGui::PushStyleColor(ImGuiCol_ButtonActive, { 0, 0, 0, 0 });
@@ -159,6 +159,11 @@ void visuals::Menu()
 
 				if (ImGui::Button("scripts"))
 					tab = 9;
+
+				ImGui::SameLine();
+
+				if (ImGui::Button("unload"))
+					globals.unload = true;
 			}
 			ImGui::PopStyleColor(3);
 		}
@@ -228,19 +233,17 @@ void visuals::Menu()
 				{
 					ImGui::Text("configs");
 
-					configSystem::configName = "penishook.ini";
-
 					// todo: slot system (1, 2, 3, 4, 5, 6...10)
-					if (ImGui::Button("save config")) ImGui::HelpMarker("saves the current cheat state at (penishook.ini)");
+					if (ImGui::Button("save config"))// ImGui::HelpMarker("saves the current cheat state at (penishook.ini)");
 					{
 						configSystem::Save();
-						MessageBox(0, std::string("config saved ( " + configSystem::configName + " )").c_str(), "penishook", 0);
+						//MessageBox(0, std::string("config saved ( " + configSystem::configName + " )").c_str(), "penishook", 0);
 					}
 
-					if (ImGui::Button("load config")) ImGui::HelpMarker("loads the last saved cheat state from (penishook.ini)");
+					if (ImGui::Button("load config"))// ImGui::HelpMarker("loads the last saved cheat state from (penishook.ini)");
 					{
 						configSystem::Load();
-						MessageBox(0, std::string("config loaded ( " + configSystem::configName + " )").c_str(), "penishook", 0);
+						//MessageBox(0, std::string("config loaded ( " + configSystem::configName + " )").c_str(), "penishook", 0);
 					}
 				}
 				//ImGui::EndChild();
@@ -251,7 +254,7 @@ void visuals::Menu()
 
 			ImGui::BeginGroup();
 			{
-				configSystem::configName = "penishook.ini";
+
 			}
 			ImGui::EndGroup();
 

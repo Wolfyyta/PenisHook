@@ -3,7 +3,7 @@
 
 void configSystem::Save()
 {
-	std::ofstream fout(configName.c_str(), std::ios::binary);
+	std::ofstream fout("penishook.cfg", std::ios::binary);
 	const auto sz = sizeof(config);
 	const auto var_sz = sizeof(Var<bool>);
 	const auto cnt = sz / var_sz;
@@ -22,7 +22,7 @@ void configSystem::Save()
 
 void configSystem::Load()
 {
-	std::ifstream fin(configName.c_str(), std::ios::binary);
+	std::ifstream fin("penishook.cfg", std::ios::binary);
 	std::stringstream ss;
 	ss << fin.rdbuf();
 

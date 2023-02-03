@@ -45,6 +45,4 @@ namespace configSystem
 {
 	void Save();
 	void Load();
-
-	inline std::string configName;
 }
